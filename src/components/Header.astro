@@ -21,69 +21,53 @@ const socialCount = SOCIALS.filter(social => social.active).length;
         {
           LOGO_IMAGE.enable ? (
             <img
-              src={`/assets/${LOGO_IMAGE.svg ? "logo.svg" : "logo.png"}`}
-              alt={SITE.title}
-              width={LOGO_IMAGE.width}
-              height={LOGO_IMAGE.height}
+            src={`/assets/${LOGO_IMAGE.svg ? "logo.svg" : "logo.png"}`}
+            alt={SITE.title}
+            width={LOGO_IMAGE.width}
+            height={LOGO_IMAGE.height}
             />
-          ) : (
-            SITE.title
-          )
-        }
+            ) : (
+              SITE.title
+              )
+            }
       </a>
+      <a href="/" class="main-title">Julius</a>
       <nav id="nav-menu">
         <button
-          class="hamburger-menu focus-outline"
-          aria-label="Open Menu"
-          aria-expanded="false"
-          aria-controls="menu-items"
+        class="hamburger-menu focus-outline"
+        aria-label="Open Menu"
+        aria-expanded="false"
+        aria-controls="menu-items"
         >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="menu-icon"
-          >
-            <line x1="7" y1="12" x2="21" y2="12" class="line"></line>
+        <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        class="menu-icon"
+        >
+        <line x1="7" y1="12" x2="21" y2="12" class="line"></line>
             <line x1="3" y1="6" x2="21" y2="6" class="line"></line>
             <line x1="12" y1="18" x2="21" y2="18" class="line"></line>
             <line x1="18" y1="6" x2="6" y2="18" class="close"></line>
             <line x1="6" y1="6" x2="18" y2="18" class="close"></line>
           </svg>
         </button>
-
-        <h1>Julius's Blog</h1>
-        <a
-          target="_blank"
-          href="/rss.xml"
-          class="rss-link"
-          aria-label="rss feed"
-          title="RSS Feed"
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" class="rss-icon"
-            ><path
-              d="M19 20.001C19 11.729 12.271 5 4 5v2c7.168 0 13 5.832 13 13.001h2z"
-            ></path><path
-              d="M12 20.001h2C14 14.486 9.514 10 4 10v2c4.411 0 8 3.589 8 8.001z"
-            ></path><circle cx="6" cy="18" r="2"></circle>
-          </svg>
-          <span class="sr-only">RSS Feed</span>
-        </a>
+        
         <section id="hero">
-          {
+          <!-- {
             // only display if at least one social link is enabled
             socialCount > 0 && (
-              <div class="social-wrapper">
+            <div class="social-wrapper">
                 <Socials />
               </div>
-            )
-          }
+              )
+            } -->
         </section>
         <ul id="menu-items" class="display-none sm:flex">
           <li>
@@ -101,6 +85,22 @@ const socialCount = SOCIALS.filter(social => social.active).length;
               About
             </a>
           </li>
+          <a
+            target="_blank"
+            href="/rss.xml"
+            class="rss-link"
+            aria-label="rss feed"
+            title="RSS Feed"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" class="rss-icon"
+              ><path
+                d="M19 20.001C19 11.729 12.271 5 4 5v2c7.168 0 13 5.832 13 13.001h2z"
+              ></path><path
+                d="M12 20.001h2C14 14.486 9.514 10 4 10v2c4.411 0 8 3.589 8 8.001z"
+              ></path><circle cx="6" cy="18" r="2"></circle>
+            </svg>
+            <span class="sr-only">RSS Feed</span>
+          </a>
           <li>
             <LinkButton
               href="/search/"
@@ -152,16 +152,19 @@ const socialCount = SOCIALS.filter(social => social.active).length;
     @apply absolute -top-full left-16 z-50 bg-skin-accent px-3 py-2 text-skin-inverted transition-all focus:top-4;
   }
   .nav-container {
-    @apply mx-auto flex max-w-5xl flex-col items-center justify-between sm:flex-row;
+    @apply mx-auto flex w-full flex-col items-center justify-between sm:flex-row;
   }
   .top-nav-wrap {
-    @apply relative flex w-full items-start justify-between p-4 sm:items-center sm:py-8;
+    @apply relative mx-auto max-w-3xl w-full flex items-center justify-between p-4 sm:items-center sm:py-8;
   }
   .logo {
     @apply absolute py-1 text-xl font-semibold sm:static sm:text-2xl;
   }
+  .main-title {
+    @apply text-3xl font-bold mx-6 ml-16 sm:ml-6;
+  }
   .hamburger-menu {
-    @apply self-end p-2 sm:hidden;
+    @apply self-end p-2 mb-1 sm:hidden;
   }
   .hamburger-menu svg {
     @apply h-6 w-6 scale-125 fill-skin-base;
@@ -169,6 +172,9 @@ const socialCount = SOCIALS.filter(social => social.active).length;
 
   nav {
     @apply flex w-full flex-col items-center sm:ml-2 sm:flex-row sm:justify-end sm:space-x-4 sm:py-0;
+  }
+  nav h1 {
+    @apply text-4xl
   }
   nav ul {
     @apply mt-4 grid w-44 grid-cols-2 grid-rows-4 gap-x-2 gap-y-2 sm:ml-0 sm:mt-0 sm:w-auto sm:gap-x-5 sm:gap-y-0;

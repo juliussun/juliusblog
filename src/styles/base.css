@@ -38,7 +38,7 @@
     display: block;
   }
   body {
-    @apply flex min-h-[100svh] flex-col bg-skin-fill font-['Helvetica'] text-skin-base 
+    @apply flex min-h-[100svh] flex-col bg-skin-fill font-['Inter'] text-skin-base 
     selection:bg-skin-accent selection:bg-opacity-70 selection:text-skin-inverted;
   }
   section,
@@ -140,5 +140,8 @@
   }
   .focus-outline {
     @apply outline-2 outline-offset-1 outline-skin-fill focus-visible:no-underline focus-visible:outline-dashed;
+  }
+  .divider {
+    @apply h-20
   }
 }
