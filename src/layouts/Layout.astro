@@ -5,6 +5,8 @@ import { ViewTransitions } from "astro:transitions";
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
 
+const gaMeasurementId = import.meta.env.PUBLIC_GA_MEASUREMENT_ID;
+
 export interface Props {
   title?: string;
   author?: string;
@@ -44,6 +46,16 @@ const socialImageURL = new URL(
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Google tag (gtag.js) -->
+    <script type="text/partytown" async src={`https://www.googletagmanager.com/gtag/js?id=${gaMeasurementId}`}></script>
+    <script type="text/partytown" is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', gaMeasurementId);
+    </script>
 
     <!-- General Meta Tags -->
     <title>{title}</title>
