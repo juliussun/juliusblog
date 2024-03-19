@@ -10,7 +10,6 @@ import ShareLinks from "@components/ShareLinks.astro";
 import { SITE } from "@config";
 
 import 'artalk/dist/Artalk.css'
-import Artalk from 'artalk'
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -82,6 +81,7 @@ const layoutProps = {
     
     <!-- Artalk -->
     <div id="Comments"></div>
+
     <div
 
     class="flex flex-col-reverse items-center justify-between gap-6 sm:flex-row-reverse sm:items-end sm:gap-4"
@@ -114,13 +114,14 @@ const layoutProps = {
 </style>
 
 <script>
+  import Artalk from "artalk";
   Artalk.init({
-        el:        '#Comments',                // 绑定元素的 Selector
-        pageKey:   '',                  // 固定链接 (留空自动获取)
-        pageTitle: '',  // 页面标题 (留空自动获取)
-        server:    'http://ec2-23-20-95-140.compute-1.amazonaws.com:8080',  // 后端地址
-        site:      'julius\' blog',             // 你的站点名
-  })
+    el: "#Comments", // 绑定元素的 Selector
+    pageKey: "", // 固定链接 (留空自动获取)
+    pageTitle: "", // 页面标题 (留空自动获取)
+    server: "http://ec2-23-20-95-140.compute-1.amazonaws.com:8080", // 后端地址
+    site: "julius' blog", // 你的站点名
+  });
 </script>
 
 <script is:inline>
