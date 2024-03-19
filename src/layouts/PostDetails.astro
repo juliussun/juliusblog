@@ -3,6 +3,7 @@ import Layout from "@layouts/Layout.astro";
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
 import Tag from "@components/Tag.astro";
+import Utterances from "@components/Utterances.astro";
 import Datetime from "@components/Datetime";
 import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
@@ -78,9 +79,8 @@ const layoutProps = {
     <ul class="my-8">
       {tags.map(tag => <Tag tag={slugifyStr(tag)} />)}
     </ul>
-    
-    <!-- Artalk -->
-    <div id="Comments"></div>
+    Comment should be here
+    <Utterances/>
 
     <div
 
@@ -112,17 +112,6 @@ const layoutProps = {
     @apply text-2xl font-semibold text-skin-accent;
   }
 </style>
-
-<script>
-  import Artalk from "artalk";
-  Artalk.init({
-    el: "#Comments", // 绑定元素的 Selector
-    pageKey: "", // 固定链接 (留空自动获取)
-    pageTitle: "", // 页面标题 (留空自动获取)
-    server: "https://ec2-23-20-95-140.compute-1.amazonaws.com:8080", // 后端地址
-    site: "julius' blog", // 你的站点名
-  });
-</script>
 
 <script is:inline>
   /** Attaches links to headings in the document,
