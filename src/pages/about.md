@@ -15,6 +15,7 @@ I consider my early career a good one. But it was a hiatus after all. This has b
   <img src="/assets/hiking.webp" class="sm:w-3/4 mx-auto" alt="climbing to the new top">
 </div>
 
-<div style="color: #43B776; font-size: 14px; margin-top: 45px; padding: 5px; text-align: right">
-<span>This site is re-built based on based on <code>Sat Naing</code> astro theme <em>AstroPaper</em></span>
+<div style="color: #389E65; font-size: 14px; margin-top: 45px; padding: 5px; text-align: right">
+<span>This site is re-built based on based on <code>Sat Naing</code> astro theme <em>AstroPaper</em></span></br>
+<span>photo credit <em>NEOM@unsplash</em></span>
 <div>
