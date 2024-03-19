@@ -9,6 +9,9 @@ import { slugifyStr } from "@utils/slugify";
 import ShareLinks from "@components/ShareLinks.astro";
 import { SITE } from "@config";
 
+import 'artalk/dist/Artalk.css'
+import Artalk from 'artalk'
+
 export interface Props {
   post: CollectionEntry<"blog">;
 }
@@ -72,12 +75,16 @@ const layoutProps = {
       <Content />
     </article>
 
+    
     <ul class="my-8">
       {tags.map(tag => <Tag tag={slugifyStr(tag)} />)}
     </ul>
-
+    
+    <!-- Artalk -->
+    <div id="Comments"></div>
     <div
-      class="flex flex-col-reverse items-center justify-between gap-6 sm:flex-row-reverse sm:items-end sm:gap-4"
+
+    class="flex flex-col-reverse items-center justify-between gap-6 sm:flex-row-reverse sm:items-end sm:gap-4"
     >
       <button
         id="back-to-top"
@@ -85,7 +92,7 @@ const layoutProps = {
       >
         <svg xmlns="http://www.w3.org/2000/svg" class="rotate-90">
           <path
-            d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
+          d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
           ></path>
         </svg>
         <span>Back to Top</span>
@@ -105,6 +112,16 @@ const layoutProps = {
     @apply text-2xl font-semibold text-skin-accent;
   }
 </style>
+
+<script>
+  Artalk.init({
+        el:        '#Comments',                // 绑定元素的 Selector
+        pageKey:   '',                  // 固定链接 (留空自动获取)
+        pageTitle: '',  // 页面标题 (留空自动获取)
+        server:    'http://ec2-23-20-95-140.compute-1.amazonaws.com:8080',  // 后端地址
+        site:      'julius\' blog',             // 你的站点名
+  })
+</script>
 
 <script is:inline>
   /** Attaches links to headings in the document,
