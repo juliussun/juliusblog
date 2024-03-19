@@ -21,6 +21,7 @@ let themeValue = getPreferTheme();
 function setPreference() {
   localStorage.setItem("theme", themeValue);
   reflectPreference();
+  toggleUtterancesTheme();
 }
 
 function reflectPreference() {
@@ -74,3 +75,15 @@ window
     themeValue = isDark ? "dark" : "light";
     setPreference();
   });
+
+function toggleUtterancesTheme() {
+  if (document.querySelector(".utterances-frame")) {
+    const theme = themeValue === "light" ? "github-light" : "github-dark";
+    const message = {
+      type: "set-theme",
+      theme,
+    };
+    const iframe = document.querySelector(".utterances-frame"); // omit as HTMLIFrameElement if you're wring JS
+    iframe?.contentWindow?.postMessage(message, "https://utteranc.es");
+  }
+}
