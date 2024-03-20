@@ -16,6 +16,6 @@ I consider my early career a good one. But it was a hiatus after all. This has b
 </div>
 
 <div style="color: #389E65; font-size: 14px; margin-top: 45px; padding: 5px; text-align: right">
-<span>This site is re-built based on based on <code>Sat Naing</code> astro theme <em>AstroPaper</em></span></br>
-<span>photo credit <em>NEOM@unsplash</em></span>
+<span>This site is re-built based on <code>Sat Naing</code> astro theme <em>AstroPaper</em></span></br>
+<span>photo credit <code>NEOM@unsplash</code></span>
 <div>
