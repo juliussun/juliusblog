@@ -144,6 +144,7 @@ const socialCount = SOCIALS.filter(social => social.active).length;
       </nav>
     </div>
   </div>
+  <div id="nav-divider"></div>
   <Hr />
 </header>
 
@@ -168,6 +169,10 @@ const socialCount = SOCIALS.filter(social => social.active).length;
   }
   .hamburger-menu svg {
     @apply h-6 w-6 scale-125 fill-skin-base;
+  }
+
+  #nav-divider {
+    @apply max-w-5xl mx-auto h-0.5 bg-gradient-to-r from-transparent via-green-800 to-transparent;
   }
 
   nav {
