@@ -38,6 +38,8 @@ const { noMarginTop = false } = Astro.props;
   }
   .copyright-wrapper {
     @apply my-2 flex flex-col items-center whitespace-nowrap sm:flex-row;
+    font-size: 0.9rem;
+    @apply transition-colors bg-gradient-to-r from-teal-100 to-green-300 text-transparent bg-clip-text;
   }
   .separator {
     @apply hidden sm:inline;
